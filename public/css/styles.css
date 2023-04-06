@@ -21,13 +21,29 @@
   background-color: black;
 }
 
-.navbar-background .navbar-item {
+.navbar-background .navbar-item,
+.btn.btn-logout {
   color: gold;
   font-family: 'MedievalSharp', cursive;
 }
 
-.navbar-background .navbar-item:hover {
+.navbar-background .navbar-item:hover,
+.btn.btn-logout:hover {
   color: red;
+  cursor: pointer;
+}
+
+.btn {
+  color: var(--gold);
+  margin-top: 20px;
+  font-family: 'MedievalSharp', cursive;
+  background-color: black;
+}
+
+.btn:hover {
+  color: var(--red);
+  cursor: pointer;
+  background-color: white;
 }
 
 h1 {
@@ -70,17 +86,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.btn {
-  color: var(--gold);
-  margin-top: 20px;
-  font-family: 'MedievalSharp', cursive;
-}
 
-.btn:hover {
-  color: var(--red);
-  cursor: pointer;
-  background-color: white;
-}
 
 .login-form, .signup-form, .new-quest-form {
   margin-top: 2%;
