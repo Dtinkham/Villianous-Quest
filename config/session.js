@@ -1,7 +1,7 @@
-require('dotenv').config();
 const session = require('express-session');
 const sequelize = require('./connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+require('dotenv').config();
 
 
 // Check for SECRET env var and throw an error if it isn't set.
