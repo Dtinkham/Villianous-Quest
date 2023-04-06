@@ -5,7 +5,7 @@ class Quest extends Model {}
 
 Quest.init(
     {
-        userid: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
