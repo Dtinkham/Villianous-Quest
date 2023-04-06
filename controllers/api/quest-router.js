@@ -5,26 +5,50 @@ const { Quest } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const questdata = await Quest.findAll({
-      attributes: ["id", "user_id", "quest_title", "quest_setting", "quest_challenge", "quest_text"],
-      order: [["id", "ASC"]]
+      attributes: {
+        order: [
+          "user_id",
+          "quest_title",
+          "quest_setting",
+          "quest_challenge",
+          "quest_text",
+        ],
+      },
     });
-    res.render("questPage", {quests: questdata});
-    res.json(questdata);
+    const quests = questdata.map((quest) => quest.get({ plain: true }));
+    res.render("questPage", {
+      quests,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
 
-router.get("/:id", async (req, res) => {
-  try {
-    const questdata = await Quest.findByPk(req.params.id);
-    res.json(questdata);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
+// router.get("/", async (req, res) => {
+//   try {
+//     const questdata = await Quest.findAll({
+//       // attributes: ["id", "user_id", "quest_title", "quest_setting", "quest_challenge", "quest_text"],
+//       order: [["id", "ASC"]]
+//     });
+//     res.render("questPage", {quests: questdata});
+//     res.json(questdata);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get("/:id", async (req, res) => {
+//   try {
+//     const questdata = await Quest.findByPk(req.params.id);
+//     res.json(questdata);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.post("/", withAuth, async (req, res) => {
   try {
