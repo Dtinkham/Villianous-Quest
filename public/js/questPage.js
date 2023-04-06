@@ -1,6 +1,3 @@
-// const handleQuestSubmit = async (event) => {
-//     event.preventDefault();
-//     try {
-//         const quest
-//     }
-// }
+if (!isLoggedIn) {
+    document.replaceChild('/login')
+}
