@@ -43,7 +43,7 @@
 .btn:hover {
   color: var(--red);
   cursor: pointer;
-  background-color: white;
+  background-color: var(--red);
 }
 
 h1 {

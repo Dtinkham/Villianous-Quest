@@ -1,8 +1,8 @@
-
 <section class="row">
- 
-  <div class="column">
   
+  <div class="column">
+    
+
     <form class="new-quest-form">
       <h1>Create New Quest</h1>
       <div>
@@ -30,7 +30,7 @@
 </section>
 
 
-{{#if quest.length}}
+{{#if quests.length}}
 <section>
   <h1>Quests</h1>
   <ul>
@@ -53,22 +53,5 @@
 <p>No quests found.</p>
 {{/if}}
 
-{{!-- {{#if quests.length}}
-<div class="col-md-6 quest-list">
-  <h3>Quests:</h3>
 
-  {{#each quests as |quest|}}
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <h4><a href="/quest/{{quest.id}}">{{quest.title}}</a></h4>
-    </div>
-    <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{quest.id}}">DELETE</button>
-    </div>
-  </div>
-  {{/each}}
-</div>
-{{/if}}
-</div> --}}
-
-<script src="/js/questPage.js"></script>
+<script src="/js/dashboard.js"></script>
