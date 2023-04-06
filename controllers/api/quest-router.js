@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
       attributes: ["id", "user_id", "quest_title", "quest_setting", "quest_challenge", "quest_text"],
       order: [["id", "ASC"]]
     });
+    res.render("questPage", {quests: questdata});
     res.json(questdata);
   } catch (err) {
     console.error(err);
