@@ -53,13 +53,14 @@ router.get("/", async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
   try {
     const newQuest = await Quest.create({
-      user_id: req.session.user_id,
+      // user_id: req.session.user_id,
       quest_title: req.body.quest_title,
       quest_setting: req.body.quest_setting,
       quest_challenge: req.body.quest_challenge,
       quest_text: req.body.quest_text
     });
     res.json(newQuest);
+    res.render("questPage");
   } catch (err) {
     console.error(err);
     res.status(500).json(err);

@@ -7,25 +7,25 @@ Quest.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            // allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         quest_title: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         quest_setting: {
             type: DataTypes.STRING,
-            allowNull: false
+            // allowNull: false
         },
         quest_challenge: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         quest_text: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            // allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -39,7 +39,7 @@ Quest.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Quest',
+        modelName: 'quest',
     }
 );
 

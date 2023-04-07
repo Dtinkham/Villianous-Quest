@@ -7,7 +7,7 @@ User.hasMany(Quest, {
 });
 
 Quest.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 module.exports = { User, Quest };
