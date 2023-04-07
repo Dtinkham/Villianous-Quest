@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
+  console.log("line17");
       if (response.ok) {
         document.location.replace('/quests');
       } else {
@@ -22,7 +22,8 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  
+  console.log("line25");
+
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
